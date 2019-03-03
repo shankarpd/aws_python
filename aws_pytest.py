@@ -1,12 +1,10 @@
-from flask import request, url_for
-from flask_api import FlaskAPI, status, exceptions
-from flask import jsonify
+from flask import Flask
+app = Flask(__name__)
 
-app = FlaskAPI(__name__)
 
-@app.route('/test', methods=['GET'])
-def get():
-        return jsonify({'headers': 'hello'}), 200
+@app.route('/')
+def hello():
+    return "Hello World!"
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
